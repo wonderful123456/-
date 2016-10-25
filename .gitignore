@@ -1,0 +1,93 @@
+public class Shape {
+
+        public static void main(String[] args) {
+
+        DuoBianXing duobianxing1 = new Yuan(2.0);	//圆
+
+        DuoBianXing duobianxing2 = new ZhengFangXing(2.0);	//正方形
+
+        DuoBianXing duobianxing3 = new SanJiaoXing(2.0, 2.0);	//三角形
+
+        System.out.println(duobianxing1.area());
+
+        System.out.println(duobianxing2.area());
+
+        System.out.println(duobianxing3.area());
+
+        }
+
+        }
+
+        抽象类DuoBianXing
+
+        public abstract class DuoBianXing {
+
+        public abstract double area();
+
+        }
+
+        三个子类
+        圆
+        public class Yuan extends DuoBianXing {
+
+        double r;
+
+        public Yuan(double r){
+
+        this.r = r;
+
+        }
+
+        @Override
+
+        public double area() {
+
+        return Math.PI*this.r*this.r;
+
+        }
+
+        }
+        三角形
+        public class SanJiaoXing extends DuoBianXing {
+
+        double diBian;
+
+        double gao;
+
+        public SanJiaoXing(double diBian,double gao){
+
+        this.diBian = diBian;
+
+        this.gao = gao;
+
+        }
+
+        @Override
+
+        public double area() {
+
+        return this.diBian*this.gao/2.0;
+
+        }
+
+        }
+        正方形
+        public class ZhengFangXing extends DuoBianXing {
+
+        double bianChang;
+
+        public ZhengFangXing(double bianChang){
+
+        this.bianChang = bianChang;
+
+        }
+
+        @Override
+
+        public double area() {
+
+        return this.bianChang*this.bianChang;
+
+        }
+
+        }
